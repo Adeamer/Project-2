@@ -21,15 +21,15 @@ Plant.init(
     },
     sun_exposure: {
       type: DataTypes.STRING,
-      allowNull:false,
+      allowNull:true,
     },
     mature_size: {
       type: DataTypes.STRING,
-      allowNull:false,
+      allowNull:true,
     },
     soil_type: {
       type: DataTypes.STRING,
-      allowNull:false,
+      allowNull:true,
     },
     date_planted: {
       type: DataTypes.DATE,
@@ -45,6 +45,13 @@ Plant.init(
       type: DataTypes.INTEGER,
       references: {
         model: "user",
+        key: "id",
+      },
+    },
+    category_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "category",
         key: "id",
       },
     },
