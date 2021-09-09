@@ -1,0 +1,47 @@
+[
+    {
+        "name": "Bamboo",
+        "botanical_name": "Phyllostachys Aurea",
+        "sun_exposure": "Fill, Partial",
+        "mature_size": "15-30 ft tall, 8-15 ft wide",
+        "soil_type": "Loamy, moist, well-drained",
+        "date_planted": "01/08/2021",
+        "watering_plan": ""
+    },
+    {
+        "name": "Fiddle-leaf fig",
+        "botanical_name": "Ficus Lyrata",
+        "sun_exposure": "Part shade",
+        "mature_size": "10 ft tall",
+        "soil_type": "Loamy, medium moisture, well-draining",
+        "date_planted": "05/08/2021",
+        "watering_plan": ""
+    },
+    {
+        "name": "Orchid",
+        "botanical_name": "Cattleya",
+        "sun_exposure": "Partial",
+        "mature_size": "0.25–2 ft. tall and wide",
+        "soil_type": "Soilless media, well-drained",
+        "date_planted": "25/07/2021",
+        "watering_plan": ""
+    },
+    {
+        "name": "SPlit-Leaf Philodendron",
+        "botanical_name": "Monstera Deliciosa",
+        "sun_exposure": "Bright indirect sunlight, partial shade",
+        "mature_size": "3 ft. tall, 2-3 ft. spread",
+        "soil_type": "Peat-based potting soil, well-drained",
+        "date_planted": "30/07/2021",
+        "watering_plan": ""
+    },
+    {
+        "name": "Snake Plant",
+        "botanical_name": "Sansecieria Trifasciata",
+        "sun_exposure": "Partial",
+        "mature_size": "0.5 ft.–8 ft. tall",
+        "soil_type": "Sandy, well-drained",
+        "date_planted": "30/07/2021",
+        "watering_plan": ""
+    }
+]
