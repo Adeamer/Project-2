@@ -38,7 +38,7 @@ Plant.init(
     },
     watering_plan: {
       type: DataTypes.DATE,
-      allowNull: true,
+      allowNull: false,
       defaultValue: DataTypes.NOW,
     },
     owner_id: {
