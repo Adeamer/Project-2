@@ -1,9 +1,9 @@
-const sequelize = require("../config/connection");
-const { User,Plant, Category } = require("../models");
+const sequelize = require('../config/connection');
+const { User, Plant, Category } = require('../models');
 
-const userData = require("./userData.json");
-const plantData = require("./plantData.json");
-const categoryData = require("./categoryData.json");
+const userData = require('./userData.json');
+const plantData = require('./plantData.json');
+const categoryData = require('./categoryData.json');
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
@@ -13,29 +13,20 @@ const seedDatabase = async () => {
     returning: true,
   });
 
-  for (const Plant of plantData) {
+  for (const plant of plantData) {
     await Plant.create({
-      ...Plant,
+      ...plant,
       owner_id: users[Math.floor(Math.random() * users.length)].id,
     });
   }
 
-  
-  await categoryData();
-
-   
+  for (const category of categoryData) {
+    await Category.create({
+      ...category,
+    });
+  }
 
   process.exit(0);
 };
 
 seedDatabase();
-
-
-
-
-
-
-
-
-
-
