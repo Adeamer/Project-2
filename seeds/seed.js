@@ -13,16 +13,20 @@ const seedDatabase = async () => {
     returning: true,
   });
 
-  for (const plant of plantData) {
-    await Plant.create({
-      ...plant,
+  for (const category of categoryData) {
+    await Category.create({
+      ...category,
       owner_id: users[Math.floor(Math.random() * users.length)].id,
     });
   }
 
-  for (const category of categoryData) {
-    await Category.create({
-      ...category,
+  const categories = await Category.findAll();
+
+  for (const plant of plantData) {
+    await Plant.create({
+      ...plant,
+      owner_id: users[Math.floor(Math.random() * users.length)].id,
+      category_id: categories[Math.floor(Math.random() * categories.length)].id,
     });
   }
 

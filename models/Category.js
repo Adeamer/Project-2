@@ -15,6 +15,13 @@ Category.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    owner_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'user',
+        key: 'id',
+      },
+    },
     /*  plant_id: {
       type: DataTypes.INTEGER,
       references: {

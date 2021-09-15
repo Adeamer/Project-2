@@ -43,5 +43,14 @@
     "soil_type": "Sandy, well-drained",
     "date_planted": "2021/07/30",
     "watering_plan": "2021/08/03"
+  },
+  {
+    "name": "Rose",
+    "botanical_name": "rose",
+    "sun_exposure": "Partial",
+    "mature_size": "0.5 ft.–8 ft. tall",
+    "soil_type": "Sandy, well-drained",
+    "date_planted": "2021/07/21",
+    "watering_plan": "2021/08/23"
   }
 ]
