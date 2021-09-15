@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Category extends Model {}
+class Frequency extends Model {}
 
-Category.init(
+Frequency.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -11,9 +11,20 @@ Category.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    name: {
+
+    frequency_name: {
       type: DataTypes.STRING,
       allowNull: false,
+    },
+
+    watering_freq_num: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    watering_freq_interval: {
+      type: DataTypes.ENUM('Days', 'Weeks', 'Months', 'Hours', 'Years'),
+      allowNull: false,
+      defaultValue: 'Days',
     },
     owner_id: {
       type: DataTypes.INTEGER,
@@ -28,8 +39,8 @@ Category.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'category',
+    modelName: 'frequency',
   }
 );
 
-module.exports = Category;
+module.exports = Frequency;

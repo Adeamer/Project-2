@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Bedroom",
+    "owner_id": "1"
+  },
+  {
+    "name": "Living Room",
+    "owner_id": "1"
+  },
+  {
+    "name": "Dinning",
+    "owner_id": "1"
+  },
+  {
+    "name": "Garden Area",
+    "owner_id": "1"
+  },
+  {
+    "name": "Kitchen",
+    "owner_id": "1"
+  },
+  {
+    "name": "Front Door",
+    "owner_id": "1"
+  }
+]
