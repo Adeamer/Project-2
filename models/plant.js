@@ -1,5 +1,5 @@
-const { Model, DataTypes } = require("sequelize");
-const sequelize = require("../config/connection");
+const { Model, DataTypes } = require('sequelize');
+const sequelize = require('../config/connection');
 
 class Plant extends Model {}
 
@@ -21,38 +21,73 @@ Plant.init(
     },
     sun_exposure: {
       type: DataTypes.STRING,
-      allowNull:true,
+      allowNull: true,
     },
     mature_size: {
       type: DataTypes.STRING,
-      allowNull:true,
+      allowNull: true,
     },
     soil_type: {
       type: DataTypes.STRING,
-      allowNull:true,
+      allowNull: true,
     },
     date_planted: {
       type: DataTypes.DATE,
-      allowNull: false,
+      allowNull: true,
       defaultValue: DataTypes.NOW,
     },
-    watering_plan: {
+    date_purchased: {
+      type: DataTypes.DATE,
+      allowNull: true,
+    },
+    last_watering_date: {
+      type: DataTypes.DATE,
+      allowNull: true,
+    },
+    notes: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+
+    owner_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'user',
+        key: 'id',
+      },
+    },
+    location_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'location',
+        key: 'id',
+      },
+    },
+    created_at: {
       type: DataTypes.DATE,
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
-    owner_id: {
+
+    updated_at: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW,
+    },
+
+    frequency_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: "user",
-        key: "id",
+        model: 'frequency',
+        key: 'id',
       },
     },
+
     category_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: "category",
-        key: "id",
+        model: 'category',
+        key: 'id',
       },
     },
   },
@@ -61,7 +96,7 @@ Plant.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "plant",
+    modelName: 'plant',
   }
 );
 

@@ -24,7 +24,7 @@ User.init(
     lname: {
       type: DataTypes.STRING,
       allowNull: false,
-      defaultValue: 'latsName',
+      defaultValue: 'lastName',
     },
     email: {
       type: DataTypes.STRING,
@@ -34,6 +34,12 @@ User.init(
         isEmail: true,
       },
     },
+    created_at: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      defaultValue: DataTypes.NOW,
+    },
+
     password: {
       type: DataTypes.STRING,
       allowNull: false,
