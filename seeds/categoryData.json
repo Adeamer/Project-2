@@ -1,38 +1,38 @@
 [
   {
-    "name": "Cacti & Succulents"
+    "name": "Cacti & Succulents",
+    "owner_id": 1
   },
   {
-    "name": "Foliage Plants"
+    "name": "Foliage Plants",
+    "owner_id": 1
   },
   {
-    "name": "Flowering Plants"
+    "name": "Flowering Plants",
+    "owner_id": 2
   },
   {
-    "name": "Orchids"
+    "name": "Orchids",
+    "owner_id": 2
   },
   {
-    "name": "Vegetables"
+    "name": "Vegetables",
+    "owner_id": 3
   },
   {
-    "name": "Herbs"
+    "name": "Herbs",
+    "owner_id": 3
   },
   {
-    "name": "Cacti & Succulents"
+    "name": "Herbs",
+    "owner_id": 4
   },
   {
-    "name": "Foliage Plants"
+    "name": "Orchids",
+    "owner_id": 4
   },
   {
-    "name": "Flowering Plants"
-  },
-  {
-    "name": "Orchids"
-  },
-  {
-    "name": "Vegetables"
-  },
-  {
-    "name": "Herbs"
+    "name": "Flowering Plants",
+    "owner_id": 4
   }
 ]
