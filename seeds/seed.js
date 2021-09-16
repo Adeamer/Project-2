@@ -15,14 +15,13 @@ const seedDatabase = async () => {
     returning: true,
   });
 
-  for (user of users) {
-    for (const category of categoryData) {
-      await Category.create({
-        ...category,
-        owner_id: user.id,
-      });
-    }
+  for (const category of categoryData) {
+    await Category.create({
+      ...category,
+    });
+  }
 
+  for (user of users) {
     for (const location of locationData) {
       await Location.create({
         ...location,
@@ -36,14 +35,13 @@ const seedDatabase = async () => {
         owner_id: user.id,
       });
     }
-
-    for (const plant of plantData) {
-      await Plant.create({
-        ...plant,
-        owner_id: user.id,
-      });
-    }
   }
+  for (const plant of plantData) {
+    await Plant.create({
+      ...plant,
+    });
+  }
+
   process.exit(0);
 };
 
