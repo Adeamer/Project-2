@@ -4,37 +4,33 @@ const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
-    if (req.session.logged_in) {
-      // Get all Categories and JOIN with plant data
+    // Get all Categories and JOIN with plant data
 
-      const categoryData = await Category.findAll({
-        include: [
-          {
-            model: User,
-            attributes: ['id', 'fname', 'lname'],
-          },
-        ],
-
-        where: {
-          owner_id: req.session.user_id,
+    const categoryData = await Category.findAll({
+      include: [
+        {
+          model: User,
+          attributes: ['id', 'fname', 'lname'],
         },
-      });
+      ],
 
-      // Serialize data so the template can read it
-      const Categories = categoryData.map((Category) =>
-        Category.get({ plain: true })
-      );
-      res.json(Categories);
+      where: {
+        owner_id: req.session.user_id,
+      },
+    });
 
-      // Pass serialized data and session flag into template
+    // Serialize data so the template can read it
+    const Categories = categoryData.map((Category) =>
+      Category.get({ plain: true })
+    );
+    //res.json(Categories);
 
-      res.render('category', {
-        Categories,
-        logged_in: req.session.logged_in,
-      });
-    } else {
-      res.redirect('/login');
-    }
+    // Pass serialized data and session flag into template
+
+    res.render('category', {
+      Categories,
+      logged_in: req.session.logged_in,
+    });
   } catch (err) {
     res.status(500).json(err);
   }
