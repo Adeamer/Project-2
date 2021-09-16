@@ -5,7 +5,7 @@ router.post('/', async (req, res) => {
   try {
     const newPlant = await Plant.create({
       ...req.body,
-      user_id: req.session.user_id,
+      owner_id: req.session.owner_id,
     });
 
     res.status(200).json(newPlant);
@@ -19,11 +19,11 @@ router.delete('/:id', async (req, res) => {
     const plantData = await Plant.destroy({
       where: {
         id: req.params.id,
-        user_id: req.session.user_id,
+        owner_id: req.session.user_id,
       },
     });
 
-    if (!plnatData) {
+    if (!plantData) {
       res.status(404).json({ message: 'No plant found with this id!' });
       return;
     }
