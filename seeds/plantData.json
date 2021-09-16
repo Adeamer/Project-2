@@ -10,7 +10,8 @@
     "notes": "Planed on 23-04-2021",
     "location_id": 1,
     "frequency_id": 1,
-    "category_id": 4
+    "category_id": 1,
+    "owner_id": 1
   },
   {
     "name": "Fiddle-leaf fig",
@@ -23,7 +24,8 @@
     "notes": "Need to take care",
     "location_id": 2,
     "frequency_id": 2,
-    "category_id": 1
+    "category_id": 1,
+    "owner_id": 1
   },
   {
     "name": "Orchid",
@@ -37,8 +39,10 @@
     "location_id": 3,
     "frequency_id": 3,
     "category_id": 4,
-    "last_watering_date": "2021/09/05 12:23:05"
+    "last_watering_date": "2021/09/05 12:23:05",
+    "owner_id": 2
   },
+
   {
     "name": "SPlit-Leaf Philodendron",
     "botanical_name": "Monstera Deliciosa",
@@ -51,7 +55,8 @@
     "location_id": 5,
     "frequency_id": 2,
     "category_id": 6,
-    "last_watering_date": "2021/09/08 06:30:00"
+    "last_watering_date": "2021/09/08 06:30:00",
+    "owner_id": 3
   },
   {
     "name": "Snake Plant",
@@ -63,7 +68,8 @@
     "location_id": 2,
     "frequency_id": 1,
     "category_id": 4,
-    "last_watering_date": "2021/09/11 16:30:00"
+    "last_watering_date": "2021/09/11 16:30:00",
+    "owner_id": 2
   },
   {
     "name": "Rose",
@@ -76,7 +82,40 @@
     "notes": "notes about planting",
     "location_id": 2,
     "frequency_id": 3,
-    "category_id": 4,
-    "last_watering_date": "2021/09/10 10:15:00"
+    "category_id": 3,
+    "last_watering_date": "2021/09/10 10:15:00",
+    "owner_id": 2
+  },
+
+  {
+    "name": "Lilly",
+    "botanical_name": "Lilly",
+    "sun_exposure": "Partial",
+    "mature_size": "0.5 ft.–8 ft. tall",
+    "soil_type": "Sandy, well-drained",
+    "date_planted": "2021/04/06",
+    "date_purchased": "2021/07/11",
+    "notes": "notes about Lilly",
+    "location_id": 2,
+    "frequency_id": 3,
+    "category_id": 3,
+    "last_watering_date": "2021/09/11 09:00:00",
+    "owner_id": 2
+  },
+
+  {
+    "name": "Moth Orchid",
+    "botanical_name": "Phalaenopsis",
+    "sun_exposure": "Partial",
+    "mature_size": "0.5 ft.–8 ft. tall",
+    "soil_type": "Sandy, well-drained",
+    "date_planted": "2021/01/24",
+    "date_purchased": "2020/12/16",
+    "notes": "notes",
+    "location_id": 4,
+    "frequency_id": 1,
+    "category_id": 8,
+    "last_watering_date": "2021/09/11 09:00:00",
+    "owner_id": 4
   }
 ]
