@@ -19,7 +19,7 @@ router.delete('/:id', async (req, res) => {
     const plantData = await Plant.destroy({
       where: {
         id: req.params.id,
-        owner_id: req.session.user_id,
+        owner_id: req.session.owner_id,
       },
     });
 
