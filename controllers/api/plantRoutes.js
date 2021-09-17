@@ -1,26 +1,72 @@
 const router = require('express').Router();
-const { Plant } = require('../../models');
+const { Plant, Location } = require('../../models');
 
-router.post('/', async (req, res) => {
+router.get('/:category_id/addPlant', async (req, res) => {
+  try {
+    console.log('********* add plant i am in');
+
+    const locationData = await Location.findAll({
+      where: {
+        owner_id: req.session.user_id,
+      },
+    });
+
+    const allLocations = locationData.map((Location) =>
+      Location.get({ plain: true })
+    );
+    console.log('******** location stuff', allLocations);
+    res.render('addPlant', {
+      category_id: req.params.category_id,
+      allLocations,
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(400).json(err);
+  }
+});
+
+router.post('/addPlant', async (req, res) => {
   try {
     const newPlant = await Plant.create({
       ...req.body,
-      owner_id: req.session.owner_id,
+      owner_id: req.session.user_id,
     });
 
+    //res.status(200);
     res.status(200).json(newPlant);
   } catch (err) {
     res.status(400).json(err);
   }
 });
 
-router.delete('/:id', async (req, res) => {
+router.delete('/delete/:plant_id', async (req, res) => {
   try {
     const plantData = await Plant.destroy({
       where: {
-        id: req.params.id,
+        id: req.params.plant_id,
         owner_id: req.session.owner_id,
       },
+    });
+  } catch (err) {
+    console.log('****** ERROR', err);
+    res.status(400).json(err);
+  }
+});
+
+router.get('/:plant_id', async (req, res) => {
+  try {
+    const plantData = await Blogpost.findByPk(req.params.plant_id, {
+      include: [
+        {
+          model: Category,
+          attributes: ['id', 'name'],
+        },
+
+        {
+          model: Location,
+          attributes: ['id', 'name'],
+        },
+      ],
     });
 
     if (!plantData) {
@@ -29,6 +75,33 @@ router.delete('/:id', async (req, res) => {
     }
 
     res.status(200).json(plantData);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.patch('/update/:plant_id', async (req, res) => {
+  try {
+    const updatedPlant = await Plant.update(
+      {
+        ...req.body,
+      },
+      {
+        where: {
+          id: req.params.plant_id,
+          owner_id: req.session.user_id,
+        },
+      }
+    );
+
+    if (!updatedPlant) {
+      res
+        .status(404)
+        .json({ message: 'No plant details were found with this id!' });
+      return;
+    }
+
+    res.status(200).json(updatedPlant);
   } catch (err) {
     res.status(500).json(err);
   }

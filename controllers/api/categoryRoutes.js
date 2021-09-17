@@ -1,10 +1,10 @@
 const router = require('express').Router();
-const { Category } = require('../../models');
+const { Category, User, Plant, Location } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.get('/', withAuth, async (req, res) => {
   try {
-    // Get all Categories and JOIN with plant data
+    // Get all Categories By User id
 
     const categoryData = await Category.findAll({
       where: {
@@ -12,14 +12,9 @@ router.get('/', withAuth, async (req, res) => {
       },
     });
 
-    // Serialize data so the template can read it
     const allCategories = categoryData.map((Category) =>
       Category.get({ plain: true })
     );
-    console.log(allCategories);
-    console.log('Session id is : ' + req.session.user_id);
-    //res.json(allCategories);
-
     // Pass serialized data and session flag into template
 
     res.render('category', {
@@ -31,7 +26,46 @@ router.get('/', withAuth, async (req, res) => {
   }
 });
 
-router.post('/', withAuth, async (req, res) => {
+router.get('/:category_id/plants', withAuth, async (req, res) => {
+  try {
+    // Get the category data
+    console.log('*********', req.session.user_id);
+    console.log('********* category_id', req.params.category_id);
+
+    const plantData = await Plant.findAll({
+      include: [
+        {
+          model: Category,
+          attributes: ['id', 'name'],
+        },
+      ],
+      where: {
+        owner_id: req.session.user_id,
+        category_id: req.params.category_id,
+      },
+    });
+
+    console.log('*********** plantdata', plantData);
+    const plantsdetails = plantData.map((Plant) => Plant.get({ plain: true }));
+    // Pass serialized data and session flag into template
+    console.log('*********** plantsdetail', plantsdetails);
+    console.log('********* plantsdetails.le', plantsdetails.length);
+
+    //res.json(plantsdetails);
+
+    res.render('displaycategory', {
+      plantsdetails,
+      category_id: req.params.category_id,
+      logged_in: req.session.logged_in,
+    });
+
+    //res.json(plantsdetails);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.post('/addcategory', withAuth, async (req, res) => {
   try {
     const newCategory = await Category.create({
       ...req.body,
@@ -44,11 +78,11 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
-router.delete('/:id', withAuth, async (req, res) => {
+router.delete('/delete/:category_id', withAuth, async (req, res) => {
   try {
     const categoryData = await Category.destroy({
       where: {
-        id: req.params.id,
+        id: req.params.category_id,
         owner_id: req.session.user_id,
       },
     });

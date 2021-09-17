@@ -18,7 +18,8 @@
         <nav>
           <!-- Conditionally render login or logout links -->
           {{#if logged_in}}
-            <a href='/'>category</a>
+            <a href='/api/categories'>Category</a>
+            <a href='/api/locations'>Location</a>
 
             <button class='no-button' id='logout'>logout</button>
           {{else}}
@@ -38,6 +39,9 @@
 
     <!-- Render script for logged in users only -->
     {{#if logged_in}}
+      <script
+        src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js'
+      ></script>
       <script src='/js/logout.js'></script>
     {{/if}}
   </body>
