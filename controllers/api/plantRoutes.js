@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Plant, Location } = require('../../models');
+const { Plant, Location, Category } = require('../../models');
 
 router.get('/:category_id/addPlant', async (req, res) => {
   try {
@@ -55,7 +55,8 @@ router.delete('/delete/:plant_id', async (req, res) => {
 
 router.get('/:plant_id', async (req, res) => {
   try {
-    const plantData = await Blogpost.findByPk(req.params.plant_id, {
+    console.log('!!!!!!!' + req.params.plant_id);
+    const plantData = await Plant.findByPk(req.params.plant_id, {
       include: [
         {
           model: Category,
@@ -73,8 +74,15 @@ router.get('/:plant_id', async (req, res) => {
       res.status(404).json({ message: 'No plant found with this id!' });
       return;
     }
-
-    res.status(200).json(plantData);
+    console.log('**********' + plantData);
+    const plantInfo = plantData.get({ plain: true });
+    console.log('&&&&&&&&&&&&&&&' + plantInfo);
+    // const plantInfo = plantData.map((Plant) => Plant.get({ plain: true }));
+    //res.status(200).json(plantInfo);
+    res.render('viewPlant', {
+      plantInfo,
+      logged_in: req.session.logged_in,
+    });
   } catch (err) {
     res.status(500).json(err);
   }
