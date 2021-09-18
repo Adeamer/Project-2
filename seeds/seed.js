@@ -5,7 +5,7 @@ const userData = require('./userData.json');
 const plantData = require('./plantData.json');
 const categoryData = require('./categoryData.json');
 const locationData = require('./locationData.json');
-const frequencyData = require('./frequencyData.json');
+// const frequencyData = require('./frequencyData.json');
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
@@ -29,12 +29,12 @@ const seedDatabase = async () => {
       });
     }
 
-    for (const frequency of frequencyData) {
+    /* for (const frequency of frequencyData) {
       await Frequency.create({
         ...frequency,
         owner_id: user.id,
       });
-    }
+    } */
   }
   for (const plant of plantData) {
     await Plant.create({

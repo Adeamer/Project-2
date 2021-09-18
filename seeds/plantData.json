@@ -9,7 +9,8 @@
     "date_purchased": "2021/04/23",
     "notes": "Planed on 23-04-2021",
     "location_id": 1,
-    "frequency_id": 1,
+    "watering_freq_num": "2",
+    "watering_freq_interval": "Weeks",
     "category_id": 1,
     "owner_id": 1
   },
@@ -23,7 +24,8 @@
     "date_purchased": "2021/05/13",
     "notes": "Need to take care",
     "location_id": 2,
-    "frequency_id": 2,
+    "watering_freq_num": "10",
+    "watering_freq_interval": "Days",
     "category_id": 1,
     "owner_id": 1
   },
@@ -37,7 +39,8 @@
     "date_purchased": "2021/02/12",
     "notes": "Gift",
     "location_id": 3,
-    "frequency_id": 3,
+    "watering_freq_num": "6",
+    "watering_freq_interval": "Hours",
     "category_id": 4,
     "last_watering_date": "2021/09/05 12:23:05",
     "owner_id": 2
@@ -53,7 +56,8 @@
     "date_purchased": "2021/08/10",
     "notes": "nothing as of now",
     "location_id": 5,
-    "frequency_id": 2,
+    "watering_freq_num": "1",
+    "watering_freq_interval": "Months",
     "category_id": 6,
     "last_watering_date": "2021/09/08 06:30:00",
     "owner_id": 3
@@ -66,7 +70,8 @@
     "soil_type": "Sandy, well-drained",
     "date_planted": "2021/09/05",
     "location_id": 2,
-    "frequency_id": 1,
+    "watering_freq_num": "1",
+    "watering_freq_interval": "Months",
     "category_id": 4,
     "last_watering_date": "2021/09/11 16:30:00",
     "owner_id": 2
@@ -81,7 +86,9 @@
     "date_purchased": "2021/07/01",
     "notes": "notes about planting",
     "location_id": 2,
-    "frequency_id": 3,
+
+    "watering_freq_num": "3",
+    "watering_freq_interval": "Months",
     "category_id": 3,
     "last_watering_date": "2021/09/10 10:15:00",
     "owner_id": 2
@@ -97,7 +104,9 @@
     "date_purchased": "2021/07/11",
     "notes": "notes about Lilly",
     "location_id": 2,
-    "frequency_id": 3,
+
+    "watering_freq_num": "2",
+    "watering_freq_interval": "Weeks",
     "category_id": 3,
     "last_watering_date": "2021/09/11 09:00:00",
     "owner_id": 2
@@ -113,7 +122,9 @@
     "date_purchased": "2020/12/16",
     "notes": "notes",
     "location_id": 4,
-    "frequency_id": 1,
+
+    "watering_freq_num": "12",
+    "watering_freq_interval": "Hours",
     "category_id": 8,
     "last_watering_date": "2021/09/11 09:00:00",
     "owner_id": 4

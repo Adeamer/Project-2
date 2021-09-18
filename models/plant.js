@@ -63,24 +63,20 @@ Plant.init(
         key: 'id',
       },
     },
-    created_at: {
-      type: DataTypes.DATE,
-      allowNull: false,
-      defaultValue: DataTypes.NOW,
-    },
 
-    updated_at: {
-      type: DataTypes.DATE,
-      allowNull: false,
-      defaultValue: DataTypes.NOW,
-    },
-
-    frequency_id: {
+    watering_freq_num: {
       type: DataTypes.INTEGER,
-      references: {
-        model: 'frequency',
-        key: 'id',
-      },
+      allowNull: true,
+      defaultValue: '1',
+    },
+    watering_freq_interval: {
+      type: DataTypes.ENUM('Days', 'Weeks', 'Months', 'Hours', 'Years'),
+      allowNull: true,
+      defaultValue: 'Days',
+    },
+    next_watering_date: {
+      type: DataTypes.DATE,
+      allowNull: true,
     },
 
     category_id: {
