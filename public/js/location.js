@@ -1,10 +1,10 @@
-/* const newCategoryHandler = async (event) => {
+const newLocationHandler = async (event) => {
   event.preventDefault();
 
-  const name = document.querySelector('#category-name').value.trim();
+  const name = document.querySelector('#location-name').value.trim();
 
   if (name) {
-    const response = await fetch(`/api/categories/addcategory`, {
+    const response = await fetch(`/api/locations/addlocation`, {
       method: 'POST',
       body: JSON.stringify({ name }),
       headers: {
@@ -13,33 +13,29 @@
     });
 
     if (response.ok) {
-      document.location.replace('/api/categories');
+      document.location.replace('/api/locations');
     } else {
       alert('Failed to create category');
     }
   }
 };
- */
+
 const delButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
 
-    const response = await fetch(`/api/categories/delete/${id}`, {
+    const response = await fetch(`/api/locations/delete/${id}`, {
       method: 'DELETE',
     });
 
     if (response.ok) {
-      document.location.replace('/api/categories');
+      document.location.replace('/api/locations');
     } else {
       alert('Failed to delete project');
     }
   }
 };
 
-/* document
-  .querySelector('#delete-btn')
-  .addEventListener('click', newCategoryHandler); */
-
 document
-  .querySelector('#delete-btn')
-  .addEventListener('click', delButtonHandler);
+  .querySelector('.location-name')
+  .addEventListener('submit', LocationHandler);

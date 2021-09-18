@@ -1,7 +1,7 @@
 const User = require('./User');
 const Plant = require('./Plant');
 const Category = require('./Category');
-const Frequency = require('./Frequency');
+//const Frequency = require('./Frequency');
 const Location = require('./Location');
 
 // User to Plant
@@ -36,7 +36,7 @@ User.hasMany(Category, {
 Category.belongsTo(User, {
   foreignKey: 'owner_id',
 });
-// User to Frequency
+/* // User to Frequency
 
 User.hasMany(Frequency, {
   foreignKey: 'owner_id',
@@ -45,7 +45,7 @@ User.hasMany(Frequency, {
 
 Frequency.belongsTo(User, {
   foreignKey: 'owner_id',
-});
+}); */
 
 // Category to Plant
 
@@ -68,7 +68,7 @@ Plant.belongsTo(Location, {
   foreignKey: 'location_id',
 });
 
-// Frequency to Plant
+/* // Frequency to Plant
 
 Frequency.hasMany(Plant, {
   foreignKey: 'frequency_id',
@@ -77,6 +77,7 @@ Frequency.hasMany(Plant, {
 
 Plant.belongsTo(Frequency, {
   foreignKey: 'frequency_id',
-});
+}); */
 
-module.exports = { User, Plant, Category, Location, Frequency };
+//module.exports = { User, Plant, Category, Location, Frequency };
+module.exports = { User, Plant, Category, Location };
