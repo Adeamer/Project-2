@@ -15,10 +15,19 @@
     {{#each plantsdetails as |plant|}}
       <ul class='list-group list-group-flush'>
         <li class='list-group-item'>{{plant.id}}
-          {{plant.name}}::{{plant.last_watering_date}}</li>
+          {{plant.name}}
+          NEXT WATERING DATE ::
+          {{plant.next_watering_date}}
+          <a href='/api/plant/{{plant.id}}'>VIEW PLANT</a>
+
+          {{!-- <button
+            id='selected-plant'
+            data-id='{{plant.id}}'
+          >PLANT DETAILS</button> --}}</li>
 
       </ul>
     {{/each}}
   {{/if}}
 
 </div>
+{{! <script src='../js/viewPlant.js'></script> }}
