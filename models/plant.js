@@ -70,7 +70,7 @@ Plant.init(
       defaultValue: '1',
     },
     watering_freq_interval: {
-      type: DataTypes.ENUM('Days', 'Weeks', 'Months', 'Hours', 'Years'),
+      type: DataTypes.STRING,
       allowNull: true,
       defaultValue: 'Days',
     },
