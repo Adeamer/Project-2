@@ -20,14 +20,17 @@
           {{plant.next_watering_date}}
           <a href='/api/plant/{{plant.id}}'>VIEW PLANT</a>
 
-          {{!-- <button
-            id='selected-plant'
+          {{!--  <button
+            class='trigger-push-cls btn btn-sm'
+            id='trigger-push'
             data-id='{{plant.id}}'
-          >PLANT DETAILS</button> --}}</li>
+          >Trigger Push Notification</button>
+ --}}
+        </li>
 
       </ul>
     {{/each}}
   {{/if}}
 
 </div>
-{{! <script src='../js/viewPlant.js'></script> }}
+{{! <script src='../../../js/viewPlant.js'></script> }}

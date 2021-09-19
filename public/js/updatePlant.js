@@ -54,7 +54,7 @@ const plantFormHandler = async (event) => {
     'selection-watering-frequency'
   ).value;
 
-  if (check_watering_freq_interval !== 0) {
+  if (check_watering_freq_interval) {
     var watering_freq_interval = check_watering_freq_interval;
   } else {
     var watering_freq_interval = document
@@ -76,6 +76,7 @@ const plantFormHandler = async (event) => {
     var next_watering_date = document
       .getElementById('next-water')
       .getAttribute('data-next-water');
+    console.log('Next watering date is ' + next_watering_date);
   }
 
   const fetchURL = '/api/plant/update/' + id;
@@ -108,6 +109,68 @@ const plantFormHandler = async (event) => {
   }
 };
 
+//push notification
+//commenting this code for push notifications
+/* function urlBase64ToUint8Array(base64String) {
+  const padding = '='.repeat((4 - (base64String.length % 4)) % 4);
+  const base64 = (base64String + padding).replace(/-/g, '+').replace(/_/g, '/');
+
+  const rawData = window.atob(base64);
+  const outputArray = new Uint8Array(rawData.length);
+
+  for (let i = 0; i < rawData.length; ++i) {
+    outputArray[i] = rawData.charCodeAt(i);
+  }
+  return outputArray;
+} */
+
+/* const publicVapidKey =
+  'BCq7s7eh54iYM7pWyt-nKnsScRuToV2kuDuozyHcfONJL-CfTxWGbkTQX4U0BA-1X8gLHMeRkSbtkTE_FFCmIhM';
+
+console.log('Registering service worker...'); */
+
+//const triggerPush = document.querySelector('.trigger-push');
+/* async function triggerPushNotification() {
+  console.log('puch notification clicked');
+
+  if ('serviceWorker' in navigator) {
+    console.log('I am inside if service worker');
+    const register = await navigator.serviceWorker.register(
+      '../../../js/sw.js',
+      {
+        scope: '../../../js/',
+      }
+    );
+    console.log('register' + register);
+    const subscription = await register.pushManager.subscribe({
+      userVisibleOnly: true,
+      applicationServerKey: urlBase64ToUint8Array(publicVapidKey),
+    });
+    console.log(subscription);
+
+    await fetch('/subscribe', {
+      method: 'POST',
+      body: JSON.stringify(subscription),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+  } else {
+    //console.error('Service workers are not supported in this browser');
+    if (Notification.permission === 'denied') {
+      console.log('Permission for Notifications was denied');
+      //subscribeButton.disabled = true;
+    } else {
+      console.log('Unable to subscribe to push.', error);
+      // subscribeButton.disabled = false;
+    }
+  }
+} */
+
 document
   .querySelector('.plant-form')
   .addEventListener('submit', plantFormHandler);
+
+/* document
+  .querySelector('#trigger-push')
+  .addEventListener('click', triggerPushNotification); */

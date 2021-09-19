@@ -1,20 +1,62 @@
-const viewPlantHandler = async (event) => {
-  if (event.target.hasAttribute('data-id')) {
-    const id = event.target.getAttribute('data-id');
+/* function urlBase64ToUint8Array(base64String) {
+  const padding = '='.repeat((4 - (base64String.length % 4)) % 4);
+  const base64 = (base64String + padding).replace(/-/g, '+').replace(/_/g, '/');
 
-    const response = await fetch(`/api/plant/${id}`, {
-      method: 'GET',
+  const rawData = window.atob(base64);
+  const outputArray = new Uint8Array(rawData.length);
+
+  for (let i = 0; i < rawData.length; ++i) {
+    outputArray[i] = rawData.charCodeAt(i);
+  }
+  return outputArray;
+}
+
+const publicVapidKey =
+  'BCq7s7eh54iYM7pWyt-nKnsScRuToV2kuDuozyHcfONJL-CfTxWGbkTQX4U0BA-1X8gLHMeRkSbtkTE_FFCmIhM';
+
+const triggerPush = document.querySelector('.trigger-push');
+
+async function triggerPushNotification() {
+  if ('serviceWorker' in navigator) {
+    const register = await navigator.serviceWorker.register('/sw.js', {
+      scope: '/',
     });
 
-    if (response.ok) {
-      // document.location.replace('/api/categories');
-    } else {
-      alert('Failed to delete project');
-    }
+    const subscription = await register.pushManager.subscribe({
+      userVisibleOnly: true,
+      applicationServerKey: urlBase64ToUint8Array(publicVapidKey),
+    });
+
+    await fetch('/subscribe', {
+      method: 'POST',
+      body: JSON.stringify(subscription),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+  } else {
+    console.error('Service workers are not supported in this browser');
   }
+}
+ */
+/*
+const triggerPush = document.querySelector('#trigger-push');
+async function triggerPushNotification() {
+  console.log('vdsvds');
+  alert('button clicked');
+}
+
+triggerPush.addEventListener('click', () => {
+  triggerPushNotification().catch((error) => console.error(error));
+});
+*/
+
+const triggerPushNotificationHandler = async (event) => {
+  event.preventDefault();
+  console.log('vdsvds');
+  alert('button clicked');
 };
 
-/* document
-  .querySelector('#selected-plant')
-  .addEventListener('click', viewPlantHandler);
- */
+document
+  .querySelector('.trigger-push-cls')
+  .addEventListener('click', triggerPushNotificationHandler);
