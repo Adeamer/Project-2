@@ -69,14 +69,14 @@ THEN I can redirect to plants page of that category.
 WHEN I click on plant form 
 THEN I am able to add plant name
 I am also able to add botanical name
-I am also able to add Sun Explosure
+I am also able to add Sun Exposure
 I am also able to add mature size of the plant
 I am also able to add type of soil that required for the plant
 I am also able to add date planted and purchased from date selection
 I am also able to add location such as garden, bedroom etc
 I am also able to add watering frequency
 I am also able to add watering frequency interval
-WHEN I click on the submit butten 
+WHEN I click on the submit button
 THEN I am able to save my plant details
 
 ### VIEW AND UPDATE Plant form :
@@ -91,9 +91,11 @@ Enter your search terms into the corresponding form and click search! Results wi
 
 You can clear the results by clicking the 'Clear Search Results' Button. Your previous searches are saved as suggestions in each input.
 
-Here is the Link to the application for github: https://adeamer.github.io/Week-7-Project/Index
+Here is the Link to the application for Heroku: 
 
-Here is a screengrab of the webpage:
+Here is the Link to the application for github: 
+
+Here is a screen grab of the webpage:
 
 
 The following animation demonstrates the application functionality:
@@ -101,7 +103,3 @@ The following animation demonstrates the application functionality:
 ## Credits
 
 
-
-We used Bulma for our CSS framework which can be found here: https://bulma.io/ and Font-Awesome for some of Bulmas dependencies which can be found here: https://fontawesome.com/
-
-We also used MomentJS to convert and format the date time data from the API calls, which can be found here: https://momentjs.com/
