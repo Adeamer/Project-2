@@ -54,7 +54,7 @@ const plantFormHandler = async (event) => {
     'selection-watering-frequency'
   ).value;
 
-  if (check_watering_freq_interval) {
+  if (check_watering_freq_interval !== 0) {
     var watering_freq_interval = check_watering_freq_interval;
   } else {
     var watering_freq_interval = document
