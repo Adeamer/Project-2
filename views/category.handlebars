@@ -13,9 +13,7 @@
           <div class='card'>
             <div class='row mb-2'>
               <div class='col-md-8'>
-                <h4><a
-                    href='/api/categories/{{category.id}}/plants'
-                  >{{category.name}}</a></h4>
+                <h4></h4>
               </div>
               <div class='col-md-4'>
 
@@ -24,7 +22,8 @@
                   id='delete-btn'
                   data-id='{{category.id}}'
                 >DELETE</button>
-
+                <a href='/api/categories/{{category.id}}/plants'
+                  >{{category.name}}</a>
                 {{!-- <button
                   class='btn btn-sm'
                   id='update-btn'
