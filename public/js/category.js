@@ -1,4 +1,4 @@
-/* const newCategoryHandler = async (event) => {
+const newCategoryHandler = async (event) => {
   event.preventDefault();
 
   const name = document.querySelector('#category-name').value.trim();
@@ -19,7 +19,7 @@
     }
   }
 };
- */
+ 
 const delButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
@@ -36,10 +36,10 @@ const delButtonHandler = async (event) => {
   }
 };
 
-/* document
-  .querySelector('#delete-btn')
-  .addEventListener('click', newCategoryHandler); */
+document
+  .querySelector('#submit-btn')
+  .addEventListener('click', newCategoryHandler); 
 
 document
-  .querySelector('#delete-btn')
+  .querySelector('#catdelete-btn')
   .addEventListener('click', delButtonHandler);

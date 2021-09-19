@@ -58,5 +58,10 @@ const triggerPushNotificationHandler = async (event) => {
 };
 
 document
+<<<<<<< HEAD
   .querySelector('.trigger-push-cls')
   .addEventListener('click', triggerPushNotificationHandler);
+=======
+  .querySelector('#selected-plant')
+  .addEventListener('click', viewPlantHandler);
+>>>>>>> 5466b6183cf90ae32c0cd82bfda86622d70b30f8
